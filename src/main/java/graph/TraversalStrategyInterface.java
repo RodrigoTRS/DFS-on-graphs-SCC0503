@@ -40,7 +40,7 @@ public abstract class TraversalStrategyInterface
         traversalPath = new LinkedList<>();
     }
 
-    abstract void traverseGraph(Vertex source);
+    public abstract void traverseGraph(Vertex source);
 
     public AbstractGraph getGraph()
     {
@@ -63,7 +63,7 @@ public abstract class TraversalStrategyInterface
         traversalPath.add(vertex);
     }
 
-    protected void printVisitTree()
+    public void printVisitTree()
     {
         var treeStringBuilder = new StringBuilder();
 

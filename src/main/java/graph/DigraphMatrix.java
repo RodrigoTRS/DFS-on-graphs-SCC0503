@@ -1,22 +1,10 @@
 package graph;
 
-import guru.nidi.graphviz.attribute.Label;
-import guru.nidi.graphviz.engine.Format;
-import guru.nidi.graphviz.engine.Graphviz;
-import guru.nidi.graphviz.model.MutableGraph;
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import static guru.nidi.graphviz.model.Factory.*;
 
 public class DigraphMatrix extends AbstractGraph
 {
     private Edge[][] adjacencyMatrix;
-
-    private static final Logger LOGGER = Logger.getLogger("DigraphMatrix.class");
 
     public DigraphMatrix(List<Vertex> vertices)
     {
@@ -147,6 +135,7 @@ public class DigraphMatrix extends AbstractGraph
             {
                 if(edgeExists(getVertices().get(i), getVertices().get(j)))
                 {
+                    s.append("");
                 }
                 else
                 {
@@ -166,26 +155,5 @@ public class DigraphMatrix extends AbstractGraph
     public void setAdjacencyMatrix(Edge[][] adjacencyMatrix)
     {
         this.adjacencyMatrix = adjacencyMatrix;
-    }
-
-    @Override
-    protected DigraphMatrix clone() throws CloneNotSupportedException
-    {
-        DigraphMatrix cloneGraph = (DigraphMatrix) super.clone();
-        cloneGraph.cloneAdjacencyMatrix(this);
-        return cloneGraph;
-    }
-
-    private void cloneAdjacencyMatrix(DigraphMatrix cloneTarget)
-    {
-        for(var i = 0; i < cloneTarget.getAdjacencyMatrix().length; i++)
-        {
-            for (var j = 0; j < cloneTarget.getAdjacencyMatrix().length; j++)
-            {
-                if(cloneTarget.getAdjacencyMatrix()[i][j] != null)
-                {
-                }
-            }
-        }
     }
 }

@@ -1,7 +1,6 @@
 package graph;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public abstract class AbstractGraph implements GraphInterface, Cloneable
@@ -54,14 +53,5 @@ public abstract class AbstractGraph implements GraphInterface, Cloneable
     public void addEdge(Vertex source, Vertex destination)
     {
         addEdge(source, destination);
-    }
-
-    @Override
-    protected AbstractGraph clone() throws CloneNotSupportedException
-    {
-        AbstractGraph graphClone = (AbstractGraph)super.clone();
-        graphClone.setNumberOfVertices(this.getNumberOfVertices());
-        graphClone.setVertices(new ArrayList<>(this.getVertices()));
-        return graphClone;
     }
 }
